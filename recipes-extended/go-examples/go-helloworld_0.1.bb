@@ -15,7 +15,7 @@ SRC_URI = "git://go.googlesource.com/example;branch=master;protocol=https"
 GO_IMPORT = "golang.org/x/example"
 GO_INSTALL = "${GO_IMPORT}/hello"
 
-export GO111MODULE="off"
+export GO111MODULE = "off"
 
 inherit go
 
