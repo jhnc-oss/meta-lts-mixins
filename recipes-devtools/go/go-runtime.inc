@@ -63,6 +63,7 @@ do_install() {
 }
 
 ALLOW_EMPTY:${PN} = "1"
+ALLOW_EMPTY:${PN}-staticdev = "1"
 FILES:${PN} = "${libdir}/go/pkg/${TARGET_GOTUPLE}_dynlink/*${SOLIBSDEV}"
 FILES:${PN}-dev = "${libdir}/go/src ${libdir}/go/pkg/include \
                    ${libdir}/go/pkg/${TARGET_GOTUPLE}_dynlink/*.shlibname \
