@@ -39,9 +39,10 @@ Notes
   finicky build.  This may change if sufficient rationale for doing the
   backport becomes apparent.
 - While changes to Rust recipe and class files related to oe-selftest
-  support are included by necessity, no effort has been made to backport
-  the actual addition of Rust to oe-selftest, as that is considered too
-  invasive and maintenance heavy.
+  support are included by necessity, and the Rust selftest is backported
+  (as "rust_mixin") to simplify the backporting workflow, note that no
+  effort has been made to ensure the selftest passes, and doing so is
+  not considered a priority.
 - To include Rust support in a SDK, do the following in e.g. local.conf:
   ```
   TOOLCHAIN_HOST_TASK:append = " packagegroup-rust-cross-canadian-${MACHINE}"  
