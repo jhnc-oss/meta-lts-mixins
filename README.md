@@ -38,6 +38,11 @@ Notes
   more potential impact due to upstream API changes and its known to be
   finicky build.  This may change if sufficient rationale for doing the
   backport becomes apparent.
+- To support building python3-cryptography with Rust >= 1.83, newer
+  python3-setuptools-rust and python3-setuptools have been backported
+  from scarthgap branch.  The setuptools backport is higher impact than
+  desired, but it seems lower risk than accidentally breaking a downstream
+  use of setuptools-rust trying to patch it to a working state.
 - While changes to Rust recipe and class files related to oe-selftest
   support are included by necessity, and the Rust selftest is backported
   (as "rust_mixin") to simplify the backporting workflow, note that no
