@@ -65,8 +65,45 @@ are not fixes for a demonstrated build breakage against Scarthgap are unlikely
 to be accepted.  Functional changes should be submitted and merged to oe-core
 master branch first.
 
+See the following section for the requirements for submitting patches
+containing bbappends for recipes outside of oe-core using dynamic layers.
+
+Dynamic Layer Contribution Requirements
+---------------------------------------
+
+There have been community requests to support bbappends for recipes outside
+of oe-core via the use of the dynamic layers scheme.  Submissions will be
+considered based on the following criteria:
+
+- Submissions require the submitter committing to documentation of
+  themselves as maintainer of the associated bbappends/recipes in the
+  "Maintainers" section at the end of this README file.
+- Testing of recipes supported by dynamic layers bbappends is up to their
+  individual maintainer(s), and they will have any complaints about breakage
+  directed their way.
+- Dynamic layers will initially only be considered for layers from the
+  meta-openembedded repository.
+- Non-backport changes to the Rust components from oe-core will by default
+  not be accepted to support a dynamic layer bbappend if they can be carried
+  in a bbappend in the dynamic layer.  Such changes to the base mixin are
+  too likely to increase backport effort over time.
+- Straight backports of newer version recipes will generally be
+  considered out of scope.  There is some potential for negotiation if a
+  package on a LTS branch becomes impossible to compile with a newer Rust
+  version, and patching proves extremely difficult compared to a bump to
+  a newer version.  Note that version bumps that require backports of
+  other components from oe-core will default to being rejected since even
+  in a dynamic layer the potential for side effects on downstream users
+  can be very difficult to gauge.  An example of this from oe-core would
+  be newer versions of python3-cryptography, which require maturin support
+  (and a bunch of associated Python infrastructure changes) unavailable in
+  kirkstone.
+
 Maintenance
 -----------
 
 Layer maintainers:
 Scott Murray <scott.murray@konsulko.com>
+
+Dynamic layer support maintainers:
+TBD
