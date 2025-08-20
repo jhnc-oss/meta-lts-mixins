@@ -9,6 +9,9 @@ SRC_URI = "git://go.googlesource.com/example;branch=master;protocol=https;destsu
 SRCREV = "32022caedd6a177a7717aa8680cbe179e1045935"
 UPSTREAM_CHECK_COMMITS = "1"
 
+# drop the 'destsuffix' so we make the oe-core backports easier without conflits
+SRC_URI = "git://go.googlesource.com/example;branch=master;protocol=https"
+
 GO_IMPORT = "golang.org/x/example"
 GO_INSTALL = "${GO_IMPORT}/hello"
 
