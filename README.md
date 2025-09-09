@@ -132,4 +132,4 @@ Layer maintainers:
 Scott Murray <scott.murray@konsulko.com>
 
 Dynamic layer support maintainers:
-Soumya Sambu <soumya.sambu@windriver.com>
+TBD
