@@ -9,7 +9,7 @@ SRC_URI = "crate://crates.io/cargo-c/${PV} \
            file://0001-getrandom-Use-libc-SYS_futex_time64-on-riscv32.patch;patchdir=../cargo_home/bitbake/getrandom-0.3.3/ \
            file://0001-parking-lot-Use-libc-SYS_futex_time64-on-riscv32.patch;patchdir=../cargo_home/bitbake/parking_lot_core-0.9.11/ \
 "
-SRC_URI[cargo-c.sha256sum] = "32a05aa20690ce4b2ce5f8cf409ba112f7f11161f017e8430f549af3890dc948"
+SRC_URI[cargo-c.sha256sum] = "17d431789b050b0fcf678455dfd5ceb7e5b45cd806140f8fe03b16b995d6cbff"
 
 inherit cargo cargo-update-recipe-crates pkgconfig
 
