@@ -11,6 +11,8 @@ SRC_URI = "crate://crates.io/cargo-c/${PV} \
 "
 SRC_URI[cargo-c.sha256sum] = "17d431789b050b0fcf678455dfd5ceb7e5b45cd806140f8fe03b16b995d6cbff"
 
+DEBUG_PREFIX_MAP += "-ffile-prefix-map=${CARGO_HOME}=${TARGET_DBGSRC_DIR}"
+
 inherit cargo cargo-update-recipe-crates pkgconfig
 
 DEPENDS = "openssl curl"
