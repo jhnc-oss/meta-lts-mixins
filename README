@@ -1,0 +1,15 @@
+"Mixin" layer for adding latest Go toolchain versions into the Yocto Project LTS.
+
+At the time Scarthgap was released in April 2024, Go 1.22 was the latest version
+and officially Scarthgap supports only that. This thin special-purpose mixin
+layer is meant to address this issue by backporting Go recipes from the master
+branch of openembedded-core.
+
+The patches can be backport from openembedded-core with:
+
+ git -C ../openembedded-core format-patch --stdout -1 origin/master meta/recipes-devtools/go | \
+ git am --signoff -p4 --directory=recipes-devtools/go
+
+Maintainers:
+Jose Quaresma <jose.quaresma@foundries.io>
+Peter Marko <peter.marko@siemens.com>
