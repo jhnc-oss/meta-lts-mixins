@@ -41,3 +41,47 @@ Maintenance
 Layer maintainers:
 * Jose Quaresma <jose.quaresma@foundries.io>
 * Peter Marko <peter.marko@siemens.com>
+
+Quality Assurance
+-----------------
+
+QA tests are using original openembedded-core testsuites.
+Current plan is to backport QA test changes to openembedded-core scarthgap branch.
+When that is no longer possible, changes will picked here.
+
+Automated tests to verify go toolchain functionality are being executed with following configurations and commands:
+
+* OEQA runtime
+
+    ```
+    IMAGE_INSTALL:append = " packagegroup-core-ssh-dropbear go-helloworld packagegroup-go-sdk-target"
+    IMAGE_CLASSES += "testimage"
+    TEST_SUITES = "ping ssh go"
+    QB_MEM = "-m 2048"
+    ```
+
+    ```
+    bitbake core-image-minimal && bitbake core-image-minimal:do_testimage
+    ```
+
+* OEQA SDK
+
+    ```
+    IMAGE_CLASSES += "testimage"
+    SDK_TOOLCHAIN_LANGS = "go"
+    TESTSDK_SUITES = "go"
+    ```
+
+    ```
+    bitbake core-image-minimal:do_populate_sdk && bitbake core-image-minimal:do_testsdk
+    ```
+
+* OEQA selftest
+
+    ```
+    SANITY_TESTED_DISTROS = ""
+    ```
+
+    ```
+    oe-selftest -r gotoolchain -j $(grep -c ^processor /proc/cpuinfo)
+    ```
