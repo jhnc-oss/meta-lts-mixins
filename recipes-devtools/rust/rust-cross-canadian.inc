@@ -90,3 +90,5 @@ do_install () {
 
 FILES:${PN} += "${base_prefix}/environment-setup.d"
 
+# These CVEs are specific to Microsoft Windows
+CVE_CHECK_IGNORE += "CVE-2024-24576 CVE-2024-43402"
