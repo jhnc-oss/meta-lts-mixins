@@ -77,6 +77,8 @@ def llvm_features_from_tune(d):
         f.append("+a15")
     if 'cortexa17' in feat:
         f.append("+a17")
+    if 'cortexa57' in feat:
+        f.append("+v8a")
     if ('riscv64' in feat) or ('riscv32' in feat):
         f.append("+a,+c,+d,+f,+m")
     return f
