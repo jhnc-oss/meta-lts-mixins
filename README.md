@@ -54,14 +54,13 @@ Automated tests to verify go toolchain functionality are being executed with fol
 * OEQA runtime
 
     ```
-    IMAGE_INSTALL:append = " packagegroup-core-ssh-dropbear go-helloworld packagegroup-go-sdk-target"
+    IMAGE_INSTALL:append = " go-helloworld packagegroup-go-sdk-target"
     IMAGE_CLASSES += "testimage"
-    TEST_SUITES = "ping ssh go"
-    QB_MEM = "-m 2048"
+    TEST_SUITES:append = " go"
     ```
 
     ```
-    bitbake core-image-minimal && bitbake core-image-minimal:do_testimage
+    bitbake core-image-ptest-go && bitbake core-image-ptest-go:do_testimage
     ```
 
 * OEQA SDK
