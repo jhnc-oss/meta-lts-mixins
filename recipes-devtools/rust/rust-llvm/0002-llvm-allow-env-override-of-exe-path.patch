@@ -11,16 +11,18 @@ llvm-config from a target sysroot.
 Upstream-Status: Inappropriate [oe-core specific]
 Signed-off-by: Martin Kelly <mkelly@xevo.com>
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
+(updated for Rust 1.95.0)
+Signed-off-by: Scott Murray <scott.murray@konsulko.com>
 ---
  llvm/tools/llvm-config/llvm-config.cpp | 7 +++++++
  1 file changed, 7 insertions(+)
 
 --- a/llvm/tools/llvm-config/llvm-config.cpp
 +++ b/llvm/tools/llvm-config/llvm-config.cpp
-@@ -226,6 +226,13 @@ Typical components:\n\
+@@ -248,6 +248,13 @@
  
  /// Compute the path to the main executable.
- std::string GetExecutablePath(const char *Argv0) {
+ static std::string getExecutablePath(const char *Argv0) {
 +  // Hack for Yocto: we need to override the root path when we are using
 +  // llvm-config from within a target sysroot.
 +  const char *Sysroot = std::getenv("YOCTO_ALTERNATE_EXE_PATH");
@@ -30,4 +32,4 @@ Signed-off-by: Khem Raj <raj.khem@gmail.com>
 +
    // This just needs to be some symbol in the binary; C++ doesn't
    // allow taking the address of ::main however.
-   void *P = (void *)(intptr_t)GetExecutablePath;
+   void *P = (void *)(intptr_t)getExecutablePath;
