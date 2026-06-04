@@ -54,9 +54,9 @@ Automated tests to verify go toolchain functionality are being executed with fol
 * OEQA runtime
 
     ```
-    IMAGE_INSTALL:append = " go-helloworld packagegroup-go-sdk-target"
+    IMAGE_INSTALL:append = " cgo-helloworld go-helloworld packagegroup-go-sdk-target"
     IMAGE_CLASSES += "testimage"
-    TEST_SUITES:append = " go"
+    TEST_SUITES:append = " go go_mixin"
     ```
 
     ```
