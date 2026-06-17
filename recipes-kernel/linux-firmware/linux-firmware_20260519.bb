@@ -3692,3 +3692,6 @@ INSANE_SKIP:${PN} = "already-stripped"
 
 # No need to put firmware into the sysroot
 SYSROOT_DIRS_IGNORE += "${firmwaredir}"
+
+# Don't prefer it by default
+DEFAULT_PREFERENCE = "-1"
