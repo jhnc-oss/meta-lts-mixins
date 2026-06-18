@@ -8,6 +8,16 @@ and officially Wrynose supports only that. This thin special-purpose mixin layer
 is meant to provide a current Linux firmware for Wrynose by backporting the
 linux-firmware recipe from the master branch of openembedded-core.
 
+In order to make this layer Yocto Project Compatible, the layer should not provide
+new versions of packages by default. Because of this, the recipe provided in this
+layer will not be used unless the LTS_LINUX_FIRMWARE_MIXIN_DEFAULT_PREFERENCE
+variable is modified. The default value is:
+
+```
+# DEFAULT_PREFERENCE for linux-firmware provided by the layer
+LTS_LINUX_FIRMWARE_MIXIN_DEFAULT_PREFERENCE ?= "-1"
+```
+
 Dependencies
 ------------
 
