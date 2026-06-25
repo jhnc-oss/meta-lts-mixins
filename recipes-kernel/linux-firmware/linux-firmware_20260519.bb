@@ -3694,4 +3694,4 @@ INSANE_SKIP:${PN} = "already-stripped"
 SYSROOT_DIRS_IGNORE += "${firmwaredir}"
 
 # Don't prefer it by default
-DEFAULT_PREFERENCE = "${LTS_LINUX_FIRMWARE_MIXIN_DEFAULT_PREFERENCE}"
+DEFAULT_PREFERENCE = "-1"

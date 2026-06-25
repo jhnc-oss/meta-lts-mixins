@@ -10,12 +10,12 @@ linux-firmware recipe from the master branch of openembedded-core.
 
 In order to make this layer Yocto Project Compatible, the layer should not provide
 new versions of packages by default. Because of this, the recipe provided in this
-layer will not be used unless the LTS_LINUX_FIRMWARE_MIXIN_DEFAULT_PREFERENCE
-variable is modified. The default value is:
+layer will not be used unless that is explicitly stated. To use the provided
+linux-firmware recipe, the following can be done:
 
 ```
-# DEFAULT_PREFERENCE for linux-firmware provided by the layer
-LTS_LINUX_FIRMWARE_MIXIN_DEFAULT_PREFERENCE ?= "-1"
+# please use 'DEFAULT_PREFERENCE:your_override = ""' to keep Yocto Project Compatible
+echo 'DEFAULT_PREFERENCE = ""' >> recipes-kernel/linux-firmware/linux-firmware_%.bbappend
 ```
 
 Dependencies
