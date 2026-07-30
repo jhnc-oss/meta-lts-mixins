@@ -3,7 +3,7 @@ HOMEPAGE = "https://crates.io"
 LICENSE = "MIT | Apache-2.0"
 SECTION = "devel"
 
-DEPENDS = "openssl zlib curl ca-certificates libssh2"
+DEPENDS = "openssl zlib curl ca-certificates libgit2 libssh2 sqlite3"
 
 LIC_FILES_CHKSUM = " \
     file://LICENSE-MIT;md5=b377b220f43d747efdec40d69fcaa69d \
