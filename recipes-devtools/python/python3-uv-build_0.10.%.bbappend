@@ -1,0 +1,3 @@
+inherit pkgconfig
+
+DEPENDS += "zstd"
