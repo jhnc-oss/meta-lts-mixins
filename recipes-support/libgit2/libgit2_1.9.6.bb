@@ -1,5 +1,5 @@
 SUMMARY = "the Git linkable library"
-HOMEPAGE = "http://libgit2.github.com/"
+HOMEPAGE = "https://libgit2.org/"
 LICENSE = "GPL-2.0-with-GCC-exception & MIT & OpenSSL & BSD-3-Clause & Zlib & ISC & LGPL-2.1-or-later & CC0-1.0 & BSD-2-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8289345c8713c385f45ec0c6c8a0d080"
 
