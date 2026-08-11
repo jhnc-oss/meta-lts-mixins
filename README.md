@@ -1,5 +1,5 @@
 meta-lts-mixins - wrynose/linux-firmware
-================================
+========================================
 
 "Mixin" layer for adding latest Linux firmware into the Yocto Project LTS.
 
@@ -27,13 +27,27 @@ This layer depends on:
   layers: meta
     branch: wrynose
 
-Contributing
-------------
+Backporting
+-----------
 
 The patches can be backported from openembedded-core with:
 
- git -C ../openembedded-core format-patch --stdout -1 origin/master meta/recipes-kernel/linux-firmware | \
+```
+ git -C ../openembedded-core format-patch --stdout -1 \
+   origin/master meta/recipes-kernel/linux-firmware | \
   git am --signoff -p4 --directory=recipes-kernel/linux-firmware
+```
+
+There are breaking changes in master in the license syntax,
+they can be can fixed with:
+
+```
+ sed -i -e 's/AND /\& /g' -e 's/LicenseRef-//g' */*/*.bb && \
+  git commit -s -m "linux-firmware: fix license syntax" -a
+```
+
+Contributing
+------------
 
   The yocto-patches mailinglist (yocto-patches@lists.yoctoproject.org) is used
   for questions, comments and patch review. It is subscriber only, so please
@@ -43,7 +57,12 @@ The patches can be backported from openembedded-core with:
   '[meta-lts-mixins][wrynose/linux-firmware]' in the subject.
 
   When sending single patches, please use something like:
-  git send-email -M -1 --to=yocto-patches@lists.yoctoproject.org --subject-prefix='meta-lts-mixins][wrynose/linux-firmware][PATCH'
+
+```
+  git send-email -M origin/wrynose/linux-firmware \
+   --to=yocto-patches@lists.yoctoproject.org \
+   --subject-prefix='meta-lts-mixins][wrynose/linux-firmware][PATCH'
+```
 
 Maintenance
 -----------
