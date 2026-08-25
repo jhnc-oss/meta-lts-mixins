@@ -30,20 +30,31 @@ This layer depends on:
 Backporting
 -----------
 
-The patches can be backported from openembedded-core with:
+There are breaking changes in master in the license syntax.
+Because of this we carry a local backport branch
+that follows oe-core/master without any local changes.
 
+The patches can be backported from openembedded-core in two steps:
+
+First the patch is backported on the backport branch
 ```
+ git checkout wrynose/linux-firmware-master
  git -C ../openembedded-core format-patch --stdout -1 \
    origin/master meta/recipes-kernel/linux-firmware | \
   git am --signoff -p4 --directory=recipes-kernel/linux-firmware
 ```
 
-There are breaking changes in master in the license syntax,
-they can be can fixed with:
-
+Second we merge the backport branch and fix the license syntax
 ```
+ git checkout wrynose/linux-firmware
+ git merge --signoff --no-edit -X theirs wrynose/linux-firmware-master
  sed -i -e 's/AND /\& /g' -e 's/LicenseRef-//g' */*/*.bb && \
-  git commit -s -m "linux-firmware: fix license syntax" -a
+  git commit --signoff -m "linux-firmware: fix license syntax" -a
+```
+
+So see the full diff of last merge:
+```
+  git diff HEAD~2
 ```
 
 Contributing
