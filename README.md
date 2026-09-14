@@ -57,6 +57,7 @@ Automated tests to verify go toolchain functionality are being executed with fol
     IMAGE_INSTALL:append = " cgo-helloworld go-helloworld packagegroup-go-sdk-target"
     IMAGE_CLASSES += "testimage"
     TEST_SUITES:append = " go go_mixin"
+    OE_FRAGMENTS += "core/yocto/root-login-with-empty-password"
     ```
 
     ```
