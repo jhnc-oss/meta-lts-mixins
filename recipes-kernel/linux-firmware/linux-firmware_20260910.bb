@@ -640,6 +640,7 @@ PACKAGES =+ "${PN}-amphion-vpu-license ${PN}-amphion-vpu \
              ${PN}-iwlwifi-7265d ${PN}-iwlwifi-8000c ${PN}-iwlwifi-8265 \
              ${PN}-iwlwifi-9000 \
              ${PN}-iwlwifi-9260 \
+             ${PN}-iwlwifi-ty \
              ${PN}-iwlwifi-misc \
              ${PN}-ibt-license ${PN}-ibt \
              ${PN}-ibt-11-5 ${PN}-ibt-12-16 ${PN}-ibt-hw-37-7 ${PN}-ibt-hw-37-8 \
@@ -2166,32 +2167,34 @@ RDEPENDS:${PN}-imx-sdma-imx6q += "${PN}-imx-sdma-license"
 RDEPENDS:${PN}-imx-sdma-imx7d += "${PN}-imx-sdma-license"
 
 # For iwlwifi
-LICENSE:${PN}-iwlwifi           = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-135-6     = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-7    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-8    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-9    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-10   = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-12   = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-13   = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-16   = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-3160-17   = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6000-4    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6000g2a-5 = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6000g2a-6 = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6000g2b-5 = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6000g2b-6 = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6050-4    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-6050-5    = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-7260      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-7265      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-7265d     = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-8000c     = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-8265      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-9000      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-9260      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-misc      = "Firmware-iwlwifi-firmware"
-LICENSE:${PN}-iwlwifi-license   = "Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi           = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-135-6     = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-7    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-8    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-9    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-10   = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-12   = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-13   = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-16   = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-3160-17   = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-5000-5    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6000-4    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6000g2a-5 = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6000g2a-6 = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6000g2b-5 = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6000g2b-6 = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6050-4    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-6050-5    = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-7260      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-7265      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-7265d     = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-8000c     = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-8265      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-9000      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-9260      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-ty        = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-misc      = "LicenseRef-Firmware-iwlwifi-firmware"
+LICENSE:${PN}-iwlwifi-license   = "LicenseRef-Firmware-iwlwifi-firmware"
 
 FILES:${PN}-iwlwifi-license = "${firmwaredir}/LICENCE.iwlwifi_firmware"
 FILES:${PN}-iwlwifi-135-6 = "${firmwaredir}/iwlwifi-135-6.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-135-6.ucode*"
@@ -2218,6 +2221,10 @@ FILES:${PN}-iwlwifi-8000c   = "${firmwaredir}/iwlwifi-8000C-*.ucode* ${firmwared
 FILES:${PN}-iwlwifi-8265   = "${firmwaredir}/iwlwifi-8265-*.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-8265-*.ucode*"
 FILES:${PN}-iwlwifi-9000   = "${firmwaredir}/iwlwifi-9000-*.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-9000-*.ucode*"
 FILES:${PN}-iwlwifi-9260   = "${firmwaredir}/iwlwifi-9260-*.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-9260-*.ucode*"
+FILES:${PN}-iwlwifi-ty     = " \
+    ${firmwaredir}/iwlwifi-ty-*.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-ty-*.ucode* \
+    ${firmwaredir}/iwlwifi-ty-*.pnvm* ${firmwaredir}/intel/iwlwifi/iwlwifi-ty-*.pnvm* \
+"
 FILES:${PN}-iwlwifi-misc   = " \
     ${firmwaredir}/iwlwifi-*.ucode* ${firmwaredir}/intel/iwlwifi/iwlwifi-*.ucode* \
     ${firmwaredir}/iwlwifi-*.pnvm* ${firmwaredir}/intel/iwlwifi/iwlwifi-*.pnvm* \
@@ -2247,6 +2254,7 @@ RDEPENDS:${PN}-iwlwifi-8000c     = "${PN}-iwlwifi-license"
 RDEPENDS:${PN}-iwlwifi-8265      = "${PN}-iwlwifi-license"
 RDEPENDS:${PN}-iwlwifi-9000      = "${PN}-iwlwifi-license"
 RDEPENDS:${PN}-iwlwifi-9260      = "${PN}-iwlwifi-license"
+RDEPENDS:${PN}-iwlwifi-ty        = "${PN}-iwlwifi-license"
 RDEPENDS:${PN}-iwlwifi-misc      = "${PN}-iwlwifi-license"
 
 # -iwlwifi-misc is a "catch all" package that includes all the iwlwifi
